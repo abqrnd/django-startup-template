@@ -12,9 +12,11 @@ h1, h2, h3, h4, h5, h6, p, ol, ul, pre {
 
 li ol {
     margin-left: 1em;
+    margin-bottom: 0;
 }
 
 pre {
+    position: relative;
     max-width: 100%;
     overflow: auto;
     border: 1px solid #487858;
@@ -24,6 +26,12 @@ pre {
 hr {
     margin: 20px 0;
     clear: both;
+}
+
+.note {
+    padding: 0.6em;
+    border: 2px solid orange;
+    background-color: #ffffcc;
 }
 
 .instructions h1,
@@ -68,6 +76,7 @@ hr {
 
 }
 
+pre[data-file]:before,
 .step .local:before,
 .step .remote:before {
     position: absolute;
@@ -81,10 +90,17 @@ hr {
     display: block;
 }
 
+pre[data-file]:before {
+    content: attr(data-file) !important;
+}
+
 em.project-name,
 em.webfaction-username,
 em.webfaction-ip,
 em.webfaction-port,
+em.db-name,
+em.db-user,
+em.db-password,
 em.random-password,
 em.aws-bucket,
 em.aws-key,
