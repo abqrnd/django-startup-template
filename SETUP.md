@@ -204,6 +204,7 @@ echo "export WORKON_HOME=~/.virtualenvs" >> ~/.bash_profile
 echo "export PROJECT_HOME=~/webapps" >> ~/.bash_profile
 echo "export PIP_VIRTUALENV_BASE=$WORKON_HOME" >> ~/.bash_profile
 echo "export PIP_RESPECT_VIRTUALENV=true" >> ~/.bash_profile
+echo "export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'"  >> ~/.bash_profile
 echo "if [ -f ~/bin/virtualenvwrapper.sh ]; then" >> ~/.bash_profile
 echo "    source ~/bin/virtualenvwrapper.sh" >> ~/.bash_profile
 echo "fi" >> ~/.bash_profile

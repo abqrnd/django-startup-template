@@ -1,12 +1,11 @@
 django-startup-template
 =======================
 
-A Django 1.4 template to kickstart a new web app.
+A Django 1.5.1 template to kickstart a new web app on a Webfaction server.
 
 Features
 ========
-Out of the box this project template provides the following packages and 
-functionality:
+Out of the box this project template provides the following packages and functionality:
 
 1. Local and Production settings files.
 2. django-storage: Static file storage on Amazon S3.
@@ -47,6 +46,12 @@ meaningful.
 mkvirtualenv env_my_django_project
 ```
 
+Acticate the virtual environment.
+
+```
+workon env_my_django_project
+```
+
 **Download and install the latest stable version of Django (1.4)**
 
 ```
@@ -59,12 +64,9 @@ This may take a few minutes.
 switch to the new application folder
 
 ```
-django-admin.py startproject --template=https://github.com/rudasn/django-startup-template/zipball/master --extension=py,md,conf,.gitignore app; cd app
+django-admin.py startproject --template=https://github.com/rudasn/django-startup-template/zipball/master --extension=py,md,conf,.gitignore PROJECT_NAME; cd PROJECT_NAME
 ```
 
-This command will create a new folder named **```app```** in which your Django 
-project will live.
+**Make sure you replace ``PROJECT_NAME`` with the name of your project**
 
 Now browse to the new project's directory and follow the instructions in **SETUP.md**.
-
-django-admin.py startproject --template=../django-startup-template/ --extension=py,md,conf,.gitignore eheterocycles; cd eheterocycles
