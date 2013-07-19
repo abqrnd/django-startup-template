@@ -21,6 +21,11 @@ AMAZONS3 = {
 }
 ########## AMAZON S3 CONFIGURATION
 
+########## HOSTS CONFIGURATION
+ALLOWED_HOSTS = [
+    ''
+]
+########## HOSTS CONFIGURATION
 
 ########## EMAIL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#email-backend
