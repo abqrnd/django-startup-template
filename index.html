@@ -179,6 +179,7 @@
 <pre class="local">
     <code>mv <em class="project-name"></em>/is_local.py <em class="project-name"></em>/settings/local.py</code></pre>
         </div>
+        <h3>Database</h3>
         <div class="step">
             <p>Enter our database credentials in our production settings file. Open the <code>settings/production.py</code> file and change the <code>DATABASE</code> entry with your database credentials to look like this:</p>
 <pre class="local" data-file="settings/production.py">
@@ -188,6 +189,7 @@
         'PASSWORD': '<em class="db-password"></em>'
     }</code></pre>
         </div>
+        <h3>Amazon S3</h3>
         <div class="step">
             <p>Enter our Amazon S3 credentials in our production settings file.
              Open the <code>settings/production.py</code> file and change the <code>AMAZONS3</code> entry to look like this:</p>
@@ -198,6 +200,23 @@
         'BUCKET': '<em class="aws-bucket"></em>'
     }</code></pre>
         </div>
+        <h3>Django</h3>
+        <div class="step">
+            <p>The <code>ALLOWED_HOSTS</code> setting defines on which hosts your application can run. Read more about it on <a href="https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts" target="django">Django docs</a>.</p>
+<pre class="local" data-file="settings/production.py">
+    <code>ALLOWED_HOSTS = [
+        # .<em class="project-name"></em>.com,
+        '.<em class="project-name"></em>.<em class="webfaction-username"></em><em>.webfactional.com</em>'
+    ]</code></pre>
+        </div>
+        <div class="step">
+            <p>The <code>EMAIL</code> settings define how Django will handle e-mail sending.</p>
+<pre class="local" file="settings/production.py">
+    <code>EMAIL_HOST = 'smtp.gmail.com' # Leave this as is if using gmail
+    EMAIL_HOST_PASSWORD = ''
+    EMAIL_HOST_USER = '' # eg. system@<em class="project-name"></em>.com</code></pre>
+        </div>
+        <h3>Git Repo</h3>
         <div class="step">
             <p>Create a new local git repo for our project.</p>
 <pre class="local">
@@ -208,10 +227,13 @@
 <pre class="local">
     <code>git remote add <strong>production</strong> ssh://<em class="webfaction-username"></em>@<em class="webfaction-username"></em>.webfactional.com/~/webapps/git/repos/<em class="project-name"></em>.git</code></pre>
     </div>
+        <h3>Test Drive</h3>
         <div class="step">
-            <p>Test drive</p>
+            <p>Initialize the local database. You will be asked to create an admin user, go ahead and to that.</p>
 <pre class="local">
-    <code>python manage.py syncdb</code>
+    <code>python manage.py syncdb</code></pre>
+            <p>Start the development server.</p>
+<pre class="local">
     <code>python manage.py runserver</code></pre>
             <p>If all goes well you should be able to go to <a href="http://127.0.0.1:8000/" target="local">http://127.0.0.1:8000/</a> and see "Hello World!".</p>
         </div>
@@ -257,7 +279,8 @@
     echo "export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'"  >> ~/.bash_profile
     echo "if [ -f ~/bin/virtualenvwrapper.sh ]; then" >> ~/.bash_profile
     echo "    source ~/bin/virtualenvwrapper.sh" >> ~/.bash_profile
-    echo "fi" >> ~/.bash_profile</code></pre>
+    echo "fi" >> ~/.bash_profile
+    source ~/.bash_profile</code></pre>
         </div>
         <h3>Virtual Environment</h3>
         <div class="step">
