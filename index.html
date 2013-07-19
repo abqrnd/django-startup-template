@@ -10,14 +10,7 @@
 <div class="wrapper">
     <header>
         <h1>Django Startup Template</h1>
-        <p>Instructions on how to set-up a new Django 1.5.1 project on a Webfaction server using <a href="//github.com/rudasn/django-startup-template">django-startup-template</a>.</p>
-        <form id="data">
-            <h2>Project Settings</h2>
-            <p><input type="text" placeholder="Project Name" title="Project Name" data-bind="project-name"></p>
-            <p><input type="text" placeholder="Webfaction Username" title="Webfaction Username" data-bind="webfaction-username"></p>
-            <p><input type="text" placeholder="Webfaction Machine IP Address" title="Webfaction Machine IP Address" data-bind="webfaction-ip"></p>
-        </form>
-
+        <h2>Set-up a new Django 1.5.1 project on a Webfaction server using <a href="//github.com/rudasn/django-startup-template">django-startup-template</a>.</h2>
         <h2>Features</h2>
         <ol>
             <li>Super easy deployments with Git.</li>
@@ -44,6 +37,13 @@
     <hr>
 
     <section class="instructions">
+        <h2>Project Settings</h2>
+        <p>Generate personalised instructions by providing some basic details. <strong>No data is being collected nor stored.</strong></p>
+        <form>
+            <p><input type="text" placeholder="Project Name" title="Project Name" data-bind="project-name"> <small>eg. my_cool_project</small></p>
+            <p><input type="text" placeholder="Webfaction Username" title="Webfaction Username" data-bind="webfaction-username"> <small>eg. awesome_dev</small></p>
+            <p><input type="text" placeholder="Webfaction Machine IP Address" title="Webfaction Machine IP Address" data-bind="webfaction-ip"> <small>eg. web121.webfaction.com or 75.126.24.79</small></p>
+        </form>
         <h2>Install</h2>
         <div class="step">
             <p>Create a new folder on your system and switch to that folder.</p>
@@ -95,7 +95,7 @@
                 <p><strong>Database type</strong> should be <em>PostgreSQL</em>.</p>
                 <p>Create a new <strong>Database Owner</strong>.</p>
                 <p><strong>Username</strong> can be <input type="text" placeholder="Database User" class="project-name" data-prefix="db_user_" title="Database User" data-bind="db-user">.</p>
-                <p><strong>Password</strong> should be something difficult like <input type="text" placeholder="Password" title="Database Password" data-bind="random-password">
+                <p><strong>Password</strong> can be <input type="text" placeholder="Password" title="Database Password" data-bind="db-password">
                     <br><small>(This was randomly generated. <a id="generate-password" href="">Generate another one</a>.)</small></p>
                 <p>Click <strong>Save</strong></p>
             </div>
@@ -184,7 +184,7 @@
     <code>DATABASE = {
         'NAME': '<em class="db-name"></em>',
         'USER': '<em class="db-user"></em>',
-        'PASSWORD': '<em class="random-password"></em>'
+        'PASSWORD': '<em class="db-password"></em>'
     }</code></pre>
         </div>
         <div class="step">
@@ -201,7 +201,7 @@
             <p>Create a new local git repo for our project.</p>
 <pre class="local">
     <code>git init
-    git add <em class="project-name"></em> requirements webfaction .gitignore manage.py README.md SETUP.md requirements.txt wsgi.py
+    git add <em class="project-name"></em> requirements webfaction .gitignore manage.py README.md requirements.txt wsgi.py
     git commit -am 'Initial commit'</code></pre>
             <p>Add the remote git repo we created earlier on Webfaction. We'll call it <strong>production</strong>.</p>
 <pre class="local">
@@ -268,14 +268,16 @@
         </div>
         <h3>Setup</h3>
         <div class="step">
-            <p>Switch to your project's directory.</p>
-<pre class="remote">
-    <code>cd ~/webapps/<em class="project-name"></em>/</code></pre>
-        </div>
-        <div class="step">
             <p>Create a new folder to place your project. It is adviced to keep your code under <strong><code>app</code></strong> as that folder is referenced in other places as well.</p>
 <pre class="remote">
     <code>mkdir ~/webapps/<em class="project-name"></em>/app</code></pre>
+        </div>
+        <div class="step">
+            <p>Switch to your project's directory.</p>
+<pre class="remote">
+    <code>cd ~/webapps/<em class="project-name"></em>/app/</code></pre>
+        </div>
+        <div class="step">
             <p>The <code>myproject</code> folder created by Webfaction will not be used so remove it.</p>
 <pre class="remote">
     <code>rm -r ~/webapps/<em class="project-name"></em>/myproject</code></pre>
@@ -293,15 +295,12 @@
     echo "GIT_WORK_TREE=\$APP_DIR/app git checkout -f" >> $GIT_REPO/hooks/post-receive
     echo "GIT_WORK_TREE=\$APP_DIR/app git reset --hard" >> $GIT_REPO/hooks/post-receive
     echo "rm \$APP_DIR/app/<em class="project-name"></em>/settings/development.py" >> $GIT_REPO/hooks/post-receive
-    chmod +x $GIT_REPO/hooks/post-receive
-    rm -r $HOME/webapps/git/repos/proj.git</code></pre>
-            <p>If you want to auto compress and move the static files to Amazon S3 on every push (not advised) also do the following:</p>
+    chmod +x $GIT_REPO/hooks/post-receive</code></pre>
+        </div>
+        <div class="step">
+            <p>If this is the first git repo you are setting up then go ahead and delete the default one created by Webfaction.</p>
 <pre class="remote">
-    <code>echo "source $HOME/bin/virtualenvwrapper.sh" >> $GIT_REPO/hooks/post-receive
-    echo "workon env_<em class="project-name"></em>" >> $GIT_REPO/hooks/post-receive
-    echo "python $APP_DIR/app/manage.py compress" >> $GIT_REPO/hooks/post-receive
-    echo "python $APP_DIR/app/manage.py collectstatic  --noinput" >> $GIT_REPO/hooks/post-receive
-    echo "deactivate" >> $GIT_REPO/hooks/post-receive</code></pre>
+    <code>rm -r $HOME/webapps/git/repos/proj.git</code></pre>
         </div>
         <div class="step">
             <p>Push our code to our remote git repo. The post-commit hook will trigger and all our files will end up where they should.</p>
@@ -469,7 +468,7 @@
             e.preventDefault();
             e.stopPropagation();
             inputs
-                .filter('[data-bind="random-password"]')
+                .filter('[data-bind="db-password"]')
                     .val(generatePassword())
                     .trigger('change');
         }).click();
@@ -477,7 +476,7 @@
         function generatePassword() {
             // http://stackoverflow.com/a/1497512/67903
             var length = 12,
-                charset = "abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789=+-_)(^%$£@!",
+                charset = "abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_",
                 retVal = "";
             for (var i = 0, n = charset.length; i < length; ++i) {
                 retVal += charset.charAt(Math.floor(Math.random() * n));
