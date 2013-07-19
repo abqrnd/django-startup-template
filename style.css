@@ -1,13 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+
+body {
+  color: #393939;
+  font-family: 'Libre Baskerville', sans-serif;
+}
+
+a:link,
+a:visited {
+    color: #ab5603;
+}
+
 * {margin: 0; padding: 0;}
 
-.wrapper {
-    max-width: 980px;
-    margin: 0 auto;
+
+h1, h2, h3, h4, h5, h6 {
+    color: #326342;
 }
 
 h1, h2, h3, h4, h5, h6, p, ol, ul, pre {
     line-height: 1.7;
     margin-bottom: 20px;
+}
+
+ol, ul {
+    list-style-position: inside;
 }
 
 li ol {
@@ -26,6 +42,33 @@ pre {
 hr {
     margin: 20px 0;
     clear: both;
+}
+
+header h1 {
+    margin: -20px -20px 0 -20px;
+    padding: 20px;
+    border-top: 5px solid #94da3a;
+    color: #fff;
+    background-color: #092e20;
+}
+
+header h1 + h2 {
+    color: #fff;
+    font-weight: normal;
+    font-size: 1em;
+    background-color: #487858;
+    padding: 10px 20px;
+    margin: 0 -20px 20px -20px;
+}
+
+small {
+    color: #999;
+}
+
+.wrapper {
+    /*max-width: 980px;
+    margin: 0 auto;*/
+    padding: 20px;
 }
 
 .note {
@@ -69,7 +112,7 @@ hr {
 
 .step .local,
 .step .remote {
-    width: 48%;
+    width: 55%;
     clear: both;
     position: relative;
     padding: 30px 0 16px;
@@ -120,7 +163,11 @@ em.aws-secret {
 
 input[type="text"],
 input[type="number"] {
-    padding: 0.6em;
+    font: inherit;
+    font-size: 90%;
+    color: #326342;
+    font-weight: bold;
+    padding: 0.4em;
     width: 40%;
 }
 
