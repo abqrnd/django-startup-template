@@ -1,8 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Julius+Sans+One|Libre+Baskerville:400,400italic);
+* {margin: 0; padding: 0;}
 
 body {
-  color: #393939;
-  font-family: 'Libre Baskerville', sans-serif;
+    color: #393939;
+    font-family: Georgia, sans-serif;
+    font-size: 17px;
 }
 
 a:link,
@@ -10,10 +11,8 @@ a:visited {
     color: #ab5603;
 }
 
-* {margin: 0; padding: 0;}
-
-
 h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
     color: #326342;
 }
 
@@ -32,6 +31,7 @@ li ol {
 }
 
 pre {
+    font-size: 85%;
     position: relative;
     max-width: 100%;
     overflow: auto;
@@ -61,13 +61,46 @@ header h1 + h2 {
     margin: 0 -20px 20px -20px;
 }
 
+header h2 a:link,
+header h2 a:visited {
+    color: #092e20;
+    padding: 0.2em 0.4em;
+    border-radius: 0.4em;
+    text-decoration: none;
+    background-color: #94da3a;
+}
+
 small {
     color: #999;
 }
 
+input[type="text"],
+input[type="number"] {
+    font: inherit;
+    font-size: 90%;
+    color: #326342;
+    padding: 0.4em;
+    width: 40%;
+}
+
+em.project-name,
+em.webfaction-username,
+em.webfaction-ip,
+em.webfaction-port,
+em.db-name,
+em.db-user,
+em.db-password,
+em.random-password,
+em.aws-bucket,
+em.aws-key,
+em.aws-secret {
+    font-family: monospace;
+    padding: 0.2em;
+    color: #092e20;
+    background-color: #94da3a;
+}
+
 .wrapper {
-    /*max-width: 980px;
-    margin: 0 auto;*/
     padding: 20px;
 }
 
@@ -135,47 +168,4 @@ pre[data-file]:before,
 
 pre[data-file]:before {
     content: attr(data-file) !important;
-}
-
-em.project-name,
-em.webfaction-username,
-em.webfaction-ip,
-em.webfaction-port,
-em.db-name,
-em.db-user,
-em.db-password,
-em.random-password,
-em.aws-bucket,
-em.aws-key,
-em.aws-secret {
-    font-family: monospace;
-    padding: 0.2em;
-    color: #092e20;
-    background-color: #94da3a;
-}
-
-#data {
-    float: right;
-    width: 25%;
-    padding: 16px;
-    background-color: #efefef;
-}
-
-input[type="text"],
-input[type="number"] {
-    font: inherit;
-    font-size: 90%;
-    color: #326342;
-    font-weight: bold;
-    padding: 0.4em;
-    width: 40%;
-}
-
-#data input[type="text"],
-#data input[type="number"] {
-    width: 95%;
-}
-
-#data p:last-child {
-    margin-bottom: 0;
 }
