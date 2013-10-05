@@ -381,7 +381,7 @@
 <pre class="remote">
     <code>source ~/bin/virtualenvwrapper.sh
     workon env_<em class="project-name"></em>
-    cd ~/webapps/s7slockdown/app</code></pre>
+    cd ~/webapps/<em class="project-name"></em>/app</code></pre>
         </div>
         <h4>Static files</h4>
         <div class="step">
@@ -417,7 +417,7 @@
     <script type="text/javascript">
         var inputs = $('input[data-bind]').on('change', function(e) {
             var $this = $(this),
-                val = $this.val(), //.trim().replace(/\s+/g,'_'),
+                val = $this.val(),
                 group = $this.attr('data-bind'),
                 siblings = inputs.filter('[data-bind="' + group + '"]'),
                 fields = $this.data('inputs') ||
@@ -482,8 +482,6 @@
                     break;
                 }
             } while (parent_level >= level);
-
-            // parent && console.warn(index, heading.text(), parent_level, level, parent && parent.text())
 
             return parent;
         }
