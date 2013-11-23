@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 """Development settings."""
-from os.path import abspath, basename, dirname, join, normpath
-from sys import path
 
 # Django defaults
-from .common import *
+from ..common import *
 
 # Libs
 from base import *

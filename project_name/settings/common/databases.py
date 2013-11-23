@@ -1,7 +1,7 @@
 DATABASES = {
     'default': {
         'ENGINE': '',
-        'NAME': ''
+        'NAME': '',
         'USER': '',
         'PASSWORD': '',
         'HOST': '',

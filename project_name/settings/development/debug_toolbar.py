@@ -1,3 +1,6 @@
+from . import INSTALLED_APPS
+from . import MIDDLEWARE_CLASSES
+
 ########## TOOLBAR CONFIGURATION
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 INSTALLED_APPS += (

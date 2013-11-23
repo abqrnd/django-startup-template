@@ -1,3 +1,6 @@
+from os.path import normpath, join
+from base import DJANGO_ROOT
+
 ########## STATIC FILE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-root
 STATIC_ROOT = normpath(join(DJANGO_ROOT, 'static'))

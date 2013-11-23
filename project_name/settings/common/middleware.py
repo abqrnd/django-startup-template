@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#middleware-classes
 MIDDLEWARE_CLASSES = (
     # Use GZip compression to reduce bandwidth.

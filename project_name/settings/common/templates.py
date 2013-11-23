@@ -1,3 +1,6 @@
+from os.path import normpath, join
+from base import DJANGO_ROOT
+
 ########## TEMPLATE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
 TEMPLATE_CONTEXT_PROCESSORS = (

@@ -1,6 +1,9 @@
+from os.path import abspath, basename, dirname, join, normpath
+from sys import path
+
 ########## PATH CONFIGURATION
 # Absolute filesystem path to the Django project directory:
-DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+DJANGO_ROOT = dirname(dirname(abspath(__file__ + '/../')))
 
 # Absolute filesystem path to the top-level project folder:
 SITE_ROOT = dirname(DJANGO_ROOT)
@@ -28,7 +31,7 @@ USE_I18N = True
 USE_L10N = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
-SECRET_KEY = '{{ secret_key }}'
+SECRET_KEY = '9q@6x%7hacshwtlkqm!13=unfv2*hv9+h3a-+m#3y42z0$0yzm'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
 ROOT_URLCONF = '%s.urls' % SITE_NAME
