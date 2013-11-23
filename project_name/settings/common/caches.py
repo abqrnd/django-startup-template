@@ -1,0 +1,6 @@
+CACHES = {
+    'default': {
+        'BACKEND': '',
+        'LOCATION': ''
+    }
+}

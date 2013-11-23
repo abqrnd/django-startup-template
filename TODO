@@ -1,0 +1,22 @@
+TODO
+=====
+1. Cache: memcached - install & usage instructions
+    - install python memcached & djangomemcached
+    - CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': 'unix:...'
+        }
+    }
+
+2. Sorl thumbs
+    - settings
+
+3. wsgi virtualenv activate
+
+2. Staging - set up, settings & usage
+
+
+ENVIRONMENTS
+/wsgi/local.py
+
