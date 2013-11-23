@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
 from django.contrib import admin
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 
 
@@ -19,12 +19,13 @@ urlpatterns = patterns('',
 )
 
 # Make /media work on local machine
-if hasattr(settings, 'DJANGO_ENV') and settings.DJANGO_ENV == 'development':
-    urlpatterns += patterns('',
-        url(r'^media/(?P<path>.*)$',
-            'django.views.static.serve',
-            {
-                'document_root': settings.MEDIA_ROOT
-            }
-        ),
-    )
+if hasattr(settings, 'DJANGO_ENVIRONMENT') \
+    and settings.DJANGO_ENVIRONMENT == 'development':
+        urlpatterns += patterns('',
+            url(r'^media/(?P<path>.*)$',
+                'django.views.static.serve',
+                {
+                    'document_root': settings.MEDIA_ROOT
+                }
+            ),
+        )
