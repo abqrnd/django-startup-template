@@ -1,7 +1,6 @@
 from os.path import normpath, join
 from base import DJANGO_ROOT
 
-########## TEMPLATE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
@@ -27,4 +26,3 @@ TEMPLATE_LOADERS = (
 TEMPLATE_DIRS = (
     normpath(join(DJANGO_ROOT, 'templates')),
 )
-########## END TEMPLATE CONFIGURATION

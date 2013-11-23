@@ -1,6 +1,6 @@
 ########## APP CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
-DJANGO_APPS = (
+INSTALLED_APPS = (
     # Default Django apps:
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -14,9 +14,7 @@ DJANGO_APPS = (
     # Admin panel and documentation:
     'django.contrib.admin',
     'django.contrib.admindocs',
-)
 
-THIRD_PARTY_APPS = (
     # Database migration helpers:
     'south',
 
@@ -26,8 +24,4 @@ THIRD_PARTY_APPS = (
     # Thumbnails
     'sorl.thumbnail',
 )
-
-LOCAL_APPS = ()
-
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 ########## END APP CONFIGURATION

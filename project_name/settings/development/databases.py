@@ -3,7 +3,6 @@ from os.path import normpath, join
 from . import DJANGO_ROOT
 from . import DATABASES
 
-########## DATABASE CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES['default'] = {
     'ENGINE': 'django.db.backends.sqlite3',
@@ -13,4 +12,3 @@ DATABASES['default'] = {
     'HOST': '',
     'PORT': '',
 }
-########## END DATABASE CONFIGURATION

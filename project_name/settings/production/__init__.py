@@ -10,4 +10,5 @@ from email import *
 
 # Libs
 from storages import *
+from static import *
 from compress import *

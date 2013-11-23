@@ -1,6 +1,5 @@
 from . import DATABASES
 
-########## DATABASE CONFIGURATION
 DATABASES['default'] = {
     'ENGINE': 'django.db.backends.postgresql_psycopg2',
     'NAME': '',
@@ -9,4 +8,3 @@ DATABASES['default'] = {
     'HOST': '',
     'PORT': ''
 }
-########## END DATABASE CONFIGURATION

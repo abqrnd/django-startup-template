@@ -1,7 +1,6 @@
 from . import INSTALLED_APPS
 from . import MIDDLEWARE_CLASSES
 
-########## TOOLBAR CONFIGURATION
 # See: https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 INSTALLED_APPS += (
     'debug_toolbar',
@@ -14,4 +13,3 @@ INTERNAL_IPS = ('127.0.0.1',)
 MIDDLEWARE_CLASSES += (
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
-########## END TOOLBAR CONFIGURATION

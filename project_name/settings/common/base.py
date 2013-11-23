@@ -1,7 +1,17 @@
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
-########## PATH CONFIGURATION
+# Project name:
+PROJECT_NAME = '{{ project_name }}'
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#admins
+ADMINS = (
+    ('Name', 'email@example.com'),
+)
+
+# See: https://docs.djangoproject.com/en/dev/ref/settings/#managers
+MANAGERS = ADMINS
+
 # Absolute filesystem path to the Django project directory:
 DJANGO_ROOT = dirname(dirname(abspath(__file__ + '/../')))
 
@@ -11,16 +21,9 @@ SITE_ROOT = dirname(DJANGO_ROOT)
 # Site name:
 SITE_NAME = basename(DJANGO_ROOT)
 
-# Project name:
-PROJECT_NAME = "{{ project_name }}"
-
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
 path.append(DJANGO_ROOT)
-########## END PATH CONFIGURATION
-
-
-########## GENERAL CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = 'Europe/London'
 
@@ -41,4 +44,3 @@ ROOT_URLCONF = '%s.urls' % SITE_NAME
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#append-slash
 APPEND_SLASH = True
-########## END GENERAL CONFIGURATION

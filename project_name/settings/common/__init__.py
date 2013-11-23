@@ -3,7 +3,6 @@
 
 # Django defaults
 from base import *
-from admins import *
 from apps import *
 from caches import *
 from databases import *

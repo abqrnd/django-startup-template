@@ -2,7 +2,6 @@ from . import DEFAULT_FILE_STORAGE
 from . import COMPRESS_CSS_FILTERS
 from . import COMPRESS_JS_FILTERS
 
-########## COMPRESSION CONFIGURATION
 # See: http://django_compressor.readthedocs.org/en/latest/settings/#django.conf.settings.COMPRESS_OFFLINE
 COMPRESS_OFFLINE = True
 
@@ -18,4 +17,3 @@ COMPRESS_CSS_FILTERS += [
 COMPRESS_JS_FILTERS += [
     'compressor.filters.jsmin.JSMinFilter',
 ]
-########## END COMPRESSION CONFIGURATION
