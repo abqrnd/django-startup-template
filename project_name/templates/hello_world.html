@@ -14,7 +14,7 @@
         {% endcompress %}
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Hello {{ settings.PROJECT_NAME }}!</h1>
         <p>
         {% thumbnail "http://placehold.it/1200x1200" "150x150" as im %}
             <img src="{{ im.url }}">
