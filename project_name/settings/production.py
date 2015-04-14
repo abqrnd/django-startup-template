@@ -129,3 +129,7 @@ COMPRESS_JS_FILTERS += [
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#prepend-www
 PREPEND_WWW = True
 ########## GENERIC CONFIGURATION
+
+
+THUMBNAIL_DEFAULT_STORAGE = STATICFILES_STORAGE
+

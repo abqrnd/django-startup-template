@@ -186,8 +186,8 @@ DJANGO_APPS = (
 )
 
 THIRD_PARTY_APPS = (
-    # Database migration helpers:
-    'south',
+    # Thumbnails
+    'sorl.thumbnail',
 
     # Static file management:
     'compressor',
