@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls import patterns, include, url
 
 
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/admin/#hooking-adminsite-instances-into-your-urlconf
